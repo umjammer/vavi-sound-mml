@@ -1,15 +1,16 @@
-# ConvFMML
-MIDI to MML Converter  
+[![Release](https://jitpack.io/v/umjammer/vavi-apps-j80.svg)](https://jitpack.io/#umjammer/vavi-apps-j80)
+[![Java CI](https://github.com/umjammer/vavi-apps-j80/actions/workflows/maven.yml/badge.svg)](https://github.com/umjammer/vavi-apps-j80/actions/workflows/maven.yml)
+[![CodeQL](https://github.com/umjammer/vavi-apps-j80/actions/workflows/codeql.yml/badge.svg)](https://github.com/umjammer/vavi-apps-j80/actions/workflows/codeql.yml)
+![Java](https://img.shields.io/badge/Java-17-b07219)
+
+# vavi-sound-mml
+
+---
+
+# [Original]()
+
+MIDI to MML ConvFMML.Converter  
 Copyright (C) 2017-2019 Rerrah
-
-[![GitHub release](https://img.shields.io/badge/release-v1.1.0-brightgreen.svg)](https://github.com/rerrahkr/ConvFMML/releases)
-![Platform: windows](https://img.shields.io/badge/platform-windows-lightgrey.svg)
-![.Net Framework: >=4.6](https://img.shields.io/badge/.NET-%3E%3D4.6-blue.svg)
-[![LICENSE](https://img.shields.io/github/license/rerrahkr/ConvFMML.svg)](./LICENSE)
-
-[日本語](./README_ja.md)
-
-> :warning: This project is no longer maintained.
 
 ## Overview
 ConvFMML is an application that converts standard MIDI file (SMF/MIDI) into Music Macro Language (MML).
