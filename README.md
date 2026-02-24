@@ -9,6 +9,8 @@
 
 this is a form of [ConvFMML](https://github.com/rerrahkr/ConvFMML)
 
+### from midi
+
 | type    | common name | status | description |
 |---------|-------------|:------:|-------------|
 | fmp7    |             |        |             |
@@ -27,6 +29,8 @@ this is a form of [ConvFMML](https://github.com/rerrahkr/ConvFMML)
 ## Usage
 
 ## References
+
+ * https://github.com/korinVR/mml2smf
 
 ## TODO
 
