@@ -1,16 +1,59 @@
 start = track+
 
-track = commands:command* next_track { return commands; }
+track = commands:command* next_track
+    {
+        var flattened = [];
+        for (var i = 0; i < commands.length; i++) {
+            var command = commands[i];
+            if (command && command.constructor === Array) {
+                for (var j = 0; j < command.length; j++) {
+                    flattened.push(command[j]);
+                }
+            } else {
+                flattened.push(command);
+            }
+        }
+        return flattened;
+    }
 
 next_track = _ ";" _ { return null; }
 
 _ = [ \t\r\n]*
 
 command
-    = comment / note / tie / rest / octave / octave_up / octave_down /
+    = comment / repeat / note / tie / rest / octave / octave_up / octave_down /
     note_length / gate_time / velocity / volume / pan / expression / control_change /
     program_change / channel_aftertouch /
     tempo / start_point / key_shift / set_midi_channel
+
+repeat
+    = _ "[" _ commands:command* _ "]" _ count:$([0-9]+)? _
+    {
+        count = count.length > 0 ? +count : 2;
+        if (count < 1) {
+            error("repeat count must be >= 1");
+        }
+
+        var flattened = [];
+        for (var i = 0; i < commands.length; i++) {
+            var command = commands[i];
+            if (command && command.constructor === Array) {
+                for (var j = 0; j < command.length; j++) {
+                    flattened.push(command[j]);
+                }
+            } else {
+                flattened.push(command);
+            }
+        }
+
+        var repeated = [];
+        for (var n = 0; n < count; n++) {
+            for (var k = 0; k < flattened.length; k++) {
+                repeated.push(flattened[k]);
+            }
+        }
+        return repeated;
+    }
 
 comment
     = _ "/*" $((!"*/" .)*) "*/" _ { return { command: "comment" }; }
