@@ -79,8 +79,8 @@
     </dependency>
 
     <dependency>
-      <groupId>br.ufmg.dcc.nanocomp</groupId>
-      <artifactId>peg</artifactId>
+      <groupId>com.github.shotishu</groupId>
+      <artifactId>PEG</artifactId>
       <version>0.10.0</version>
     </dependency>
     <dependency>
